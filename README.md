@@ -1,5 +1,7 @@
 # Proyecto con express y typescript.
 
+![CRUD-FICHI](./public/mockup.png)
+
 Express es un framework de Node.js que te permite crear aplicaciones web y API REST de forma rápida y sencilla. TypeScript es un lenguaje de programación que añade tipos estáticos a JavaScript, lo que te ayuda a escribir código más seguro y legible.
 
 1. Crea una carpeta para tu proyecto y abre una terminal en ella.
