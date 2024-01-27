@@ -1,0 +1,17 @@
+include partials/layout
+    .container.mt-5
+        .row
+            .col-md-5.offset-md-3.card.bg-dark
+                .card-body
+                    form(action=`/update/${student[0].id}`, method='POST')
+                        input(type='text' name='code' placeholder='Code' class='form-control mb-2' value=`${student[0].code}`)
+                        input(type='text' name='last_name' placeholder='Last Name' class='form-control mb-2' value=`${student[0].last_name}`)
+                        input(type='text' name='first_name' placeholder='First Name' class='form-control mb-2' value=`${student[0].first_name}`)
+                        input(type='text' name='dni' placeholder='DNI' class='form-control mb-2' value=`${student[0].dni}`)
+                        input(type='text' name='credits' placeholder='Credits' class='form-control mb-2' value=`${student[0].credits}`)
+                        input(type='text' name='average_grade' placeholder='Average Grade' class='form-control mb-2' value=`${student[0].average_grade}`)
+                        input(type='text' name='email' placeholder='Email' class='form-control mb-2' value=`${student[0].email}`)
+                        select.form-select.mb-2(name='third')
+                            option(value='1' selected=`${student[0].third}`) Yes
+                            option(value='0' selected=`${!student[0].third}`) No
+                        button.btn.btn-primary(type='submit') save student

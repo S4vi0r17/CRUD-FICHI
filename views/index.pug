@@ -1,11 +1,50 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title #{title}
-        link(rel="stylesheet" href="css/normalize.css")
-        link(rel="stylesheet" href="css/styles.css")
-    body 
-        h1 CRUD-FICHI
-        img(src="miles-morales-in-spiderman-across-the-spiderverse-em.jpg" alt="miles morales")
+include partials/layout
+    h1.text-center.my-4 CRUD-FICHI
+    .container-fluid
+        .row
+            .col-md-12
+                table.table.table-dark.table-bordered.table-hover
+                    thead
+                        tr
+                            td id
+                            td Code
+                            td Last Name
+                            td First Name
+                            td DNI
+                            td Credits
+                            td average grade 
+                            td email
+                            td third
+                            td Actions
+                    tbody
+                        if students
+                            each student in students
+                                tr
+                                    td= student.id
+                                    td= student.code
+                                    td= student.last_name
+                                    td= student.first_name
+                                    td= student.dni
+                                    td= student.credits
+                                    td= student.average_grade
+                                    td= student.email
+                                    td #{student.third ? 'Yes' : 'No'}
+                                    td.d-flex.flex-column.gap-2
+                                        a.btn.btn-warning.btn-sm(href=`/update/${student.id}`) Edit
+                                        a.btn.btn-danger.btn-sm(href=`/delete/${student.id}`) Delete
+
+        .row.d-flex.justify-content-center.mt-4
+            .col-md-4
+                .card-body
+                    form(action="/add" method="POST")
+                        input(type="text" name="code" placeholder="Code" class="form-control mb-2", autofocus)
+                        input(type="text" name="last_name" placeholder="Last Name" class="form-control mb-2")
+                        input(type="text" name="first_name" placeholder="First Name" class="form-control mb-2")
+                        input(type="text" name="DNI" placeholder="DNI" class="form-control mb-2")
+                        input(type="text" name="credits" placeholder="Credits" class="form-control mb-2")
+                        input(type="text" name="average_grade" placeholder="Average Grade" class="form-control mb-2")
+                        input(type="text" name="email" placeholder="Email" class="form-control mb-2")
+                        select.form-select.mb-2(name="third")
+                            option(value="1") Yes
+                            option(value="0") No
+                        button.btn.btn-info.d-block.mx-auto.w-75(type="submit") Add Student
