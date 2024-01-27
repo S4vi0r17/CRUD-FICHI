@@ -1,14 +1,14 @@
 {
   "name": "crud-fichi",
   "version": "1.0.0",
-  "description": "Typescript + Express + Pug",
+  "description": "Typescript + Node.js + Express + Pug + MySQL",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.ts",
     "build": "tsc",
     "serve": "node dist/index.js"
   },
-  "keywords": [],
+  "keywords": ["typescript", "node", "express", "pug", "mysql"],
   "author": "Eder Benites",
   "license": "ISC",
   "dependencies": {
